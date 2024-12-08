@@ -78,7 +78,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <>
+    <div>
       <div className="flex items-center py-4 gap-4">
         <Input
           placeholder="Filter by email, name and status..."
@@ -253,6 +253,6 @@ export function DataTable<TData, TValue>({
           </Select>
         </div>
       </div>
-    </>
+    </div>
   );
 }
