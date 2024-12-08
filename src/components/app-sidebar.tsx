@@ -10,35 +10,65 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Home } from "lucide-react";
+import {
+  AlertCircle,
+  Badge,
+  Bell,
+  Calendar,
+  Captions,
+  CheckSquare,
+  CircleUserRound,
+  ClipboardType,
+  Command,
+  Ellipsis,
+  GalleryHorizontal,
+  ListCollapse,
+  Loader,
+  Menu,
+  MessageSquareWarning,
+  NotebookTabs,
+  OctagonAlert,
+  PanelsTopLeft,
+  RectangleEllipsis,
+  SlidersHorizontal,
+  Square,
+  SquareMenu,
+  SquarePower,
+  Table,
+  TextCursorInput,
+} from "lucide-react";
 import { NavUser } from "./nav-user";
 
 const items = [
-  { title: "accordion", url: "/dashboard/accordion", icon: Home },
-  { title: "alert", url: "/dashboard/alert", icon: Home },
-  { title: "button", url: "/dashboard/button", icon: Home },
-  { title: "alert dialog", url: "/dashboard/alert-dialog", icon: Home },
-  { title: "dialog", url: "/dashboard/dialog", icon: Home },
-  { title: "badge", url: "/dashboard/badge", icon: Home },
-  { title: "calendar", url: "/dashboard/calendar", icon: Home },
-  { title: "avatar", url: "/dashboard/avatar", icon: Home },
-  { title: "card", url: "/dashboard/card", icon: Home },
-  { title: "carrousel", url: "/dashboard/carrousel", icon: Home },
-  { title: "checkbox", url: "/dashboard/checkbox", icon: Home },
-  { title: "command", url: "/dashboard/command", icon: Home },
-  { title: "combobox", url: "/dashboard/combobox", icon: Home },
-  { title: "context menu", url: "/dashboard/context-menu", icon: Home },
-  { title: "menu bar", url: "/dashboard/menu-bar", icon: Home },
-  { title: "input otp", url: "/dashboard/input-otp", icon: Home },
-  { title: "progress", url: "/dashboard/progress", icon: Home },
-  { title: "sheet", url: "/dashboard/sheet", icon: Home },
-  { title: "skeleton", url: "/dashboard/skeleton", icon: Home },
-  { title: "slider", url: "/dashboard/slider", icon: Home },
-  { title: "sonner", url: "/dashboard/sonner", icon: Home },
-  { title: "toast", url: "/dashboard/toast", icon: Home },
-  { title: "tabs", url: "/dashboard/tabs", icon: Home },
-  { title: "data table", url: "/dashboard/data-table", icon: Home },
-  { title: "form", url: "/dashboard/form", icon: Home },
+  { title: "accordion", url: "/dashboard/accordion", icon: ListCollapse },
+  { title: "alert", url: "/dashboard/alert", icon: AlertCircle },
+  { title: "button", url: "/dashboard/button", icon: SquarePower },
+  {
+    title: "alert dialog",
+    url: "/dashboard/alert-dialog",
+    icon: MessageSquareWarning,
+  },
+  { title: "dialog", url: "/dashboard/dialog", icon: Captions },
+  { title: "badge", url: "/dashboard/badge", icon: Badge },
+  { title: "calendar", url: "/dashboard/calendar", icon: Calendar },
+  { title: "avatar", url: "/dashboard/avatar", icon: CircleUserRound },
+  { title: "card", url: "/dashboard/card", icon: Square },
+  { title: "carrousel", url: "/dashboard/carrousel", icon: GalleryHorizontal },
+  { title: "checkbox", url: "/dashboard/checkbox", icon: CheckSquare },
+  { title: "command", url: "/dashboard/command", icon: Command },
+  { title: "combobox", url: "/dashboard/combobox", icon: TextCursorInput },
+  { title: "context menu", url: "/dashboard/context-menu", icon: SquareMenu },
+  { title: "menu bar", url: "/dashboard/menu-bar", icon: Menu },
+  { title: "input otp", url: "/dashboard/input-otp", icon: RectangleEllipsis },
+  { title: "progress", url: "/dashboard/progress", icon: Ellipsis },
+  { title: "sheet", url: "/dashboard/sheet", icon: PanelsTopLeft },
+  { title: "skeleton", url: "/dashboard/skeleton", icon: Loader },
+  { title: "slider", url: "/dashboard/slider", icon: SlidersHorizontal },
+  { title: "sonner", url: "/dashboard/sonner", icon: OctagonAlert },
+  { title: "toast", url: "/dashboard/toast", icon: Bell },
+  { title: "tabs", url: "/dashboard/tabs", icon: NotebookTabs },
+  { title: "data table", url: "/dashboard/data-table", icon: Table },
+  { title: "form", url: "/dashboard/form", icon: ClipboardType },
 ].sort((a, b) => a.title.localeCompare(b.title));
 
 export function AppSidebar() {
@@ -85,7 +115,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} className="capitalize">
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
